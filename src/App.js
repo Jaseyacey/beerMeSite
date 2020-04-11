@@ -6,9 +6,9 @@ import {
 } from 'react-router-dom';
 import NavBar from './Components/NavBar/NavBar';
 import HomePage from './Components/Pages/Home';
-import AboutPage from './Components/Pages/About';
+import AboutPage from './Components/Pages/About';   
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import beerapi from './Components/beerapi';
 import './App.css'
 
 class App extends Component {
