@@ -1,24 +1,35 @@
-import React from 'react';
+import React from "react";
 
-export default class beerapi extends React.Component {
-    state = {
-        loading: true,
-        beer: null,
-    };
+export default class FetchRandomBeer extends React.Component {
+  state = {
+    loading: true,
+    person: null
+  };
 
-    componentDidMount() {
-        const url = "https://api.untappd.com/v4/method_name?client_id=CLIENTID&client_secret=CLIENTSECRET";
-        const response =  fetch(url);
-        const data =  response.json();
-        this.setState({beer: results[0]})
-        console.log(data.results[0]);
+  async componentDidMount() {
+    const url = "GET https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_state=NY&by_name=cooper&by_tag=patio&by_type=micro";
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({ beer: data.results[0], loading: false });
+  }
+
+  render() {
+    if (this.state.loading) {
+        
+      return <div>fermenting on the home page</div>;
     }
 
-    render() {
-        return(
-            <div >
-                {this.state.loading ? <div>loading...</div> : <div>beer..</div>}
-            </div>
-        )
+    if (!this.state.beer) {
+      return <div>didn't get a beer</div>;
     }
+
+    return (
+      <div>
+        <div>{this.state.beer.name.title}</div>
+        <div>{this.state.beer.name.first}</div>
+        <div>{this.state.beer.name.last}</div>
+        <img src={this.state.beer.picture.large} alt=""/>
+      </div>
+    );
+  }
 }

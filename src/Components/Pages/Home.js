@@ -1,11 +1,11 @@
 import React from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container'; 
-// import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
+// import Col from 'react-bootstrap/Col';
+import FetchRandomBeer from "../beerapi";
 // import ListGroup from 'react-bootstrap/ListGroup';
-import beerapi from "../beerapi";
 // import * as firebase from 'firebase';
+import { Button } from 'reactstrap';
 
 const HomePage = () => (
     <>
@@ -17,14 +17,23 @@ const HomePage = () => (
     </Container>
 
     <Container>
-    <Col sm={6} className="mostWanted">
-        <div className="media">
-            <a className="pull-left" href="/beer/237985">
-            <img height ="50" src="https://untappd.akamaized.net/site/beer_logos/beer-237985_c70fc_sm.jpeg"></img>
-            </a>
+        <div className="beerCont">
+            <FetchRandomBeer />
         </div>
-    </Col> 
+    </Container>
+    <Container>
+    <div className="bg-info clearfix" style={{ padding: '10rem' }}>
+      <a href= "./login"><button className="btn btn-secondary float-left">Login</button></a>
+      <a href= "./register"><button className="btn btn-danger float-right">Register</button></a>
+    </div>
+    </Container>
 
+    <Container fluid> 
+        <div className="footer">
+            <footer>
+            <span class="text-muted">Place sticky footer content here.</span>
+            </footer>
+        </div>
     </Container>
     </>
 );  

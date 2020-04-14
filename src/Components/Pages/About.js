@@ -12,7 +12,7 @@ const AboutPage = () => (
 <Container fluid>
     <Jumbotron  className="jumbo">
         <h1>AboutPage</h1>
-        <h2>The Leading Craft Beer Trading Site</h2>
+        r
     </Jumbotron>
 </Container>
     </>

@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.beerCont {
+  background-color: black;
+  padding: 200px;
+}
+
+.register {
+  padding: 15px;
+}
+.login {
+  padding: 5px;
+}
+.footer {
+  padding: 20px;
+  background-color: black;
+}
