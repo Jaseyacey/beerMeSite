@@ -11,15 +11,16 @@ import loginPage from './Components/Auth/Login';
 import registerPage from './Components/Auth/Register';
 import contactMe from './Components/Pages/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FetchRandomBeer from './Components/beerapi';
+// import FetchRandomBeer from './Components/beerapi';
 import './App.css'
+
 
 class App extends Component {
     render() {
         return (
             <Router>
                 <div className="App">
-                    <NavBar />
+                <NavBar />
                     <div id="page-body">
                         <Switch>
                             <Route path="/" component={HomePage} exact  />      
