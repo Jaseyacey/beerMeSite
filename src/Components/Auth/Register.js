@@ -131,7 +131,7 @@ class Register extends React.Component {
     return (
       <Grid textAlign="center" verticalAlign="middle" className="app">
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h1" icon color="blue" textAlign="center">
+          <Header as="h1" icon color="beer" textAlign="center">
             <Icon name="beer" color="blue" />
             Register for beerTradr
           </Header>
@@ -190,7 +190,7 @@ class Register extends React.Component {
                 color="blue"
                 fluid
                 size="large"
-              >
+              > 
                 Submit
               </Button>
             </Segment>

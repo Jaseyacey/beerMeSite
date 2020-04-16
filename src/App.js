@@ -12,10 +12,36 @@ import registerPage from './Components/Auth/Register';
 import contactMe from './Components/Pages/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import FetchRandomBeer from './Components/beerapi';
+import firebase from './Components/Firebase/firebase'
 import './App.css'
 
 
 class App extends Component {
+    constructor() {
+      super();
+      this.state = ({
+        user: null,
+      });
+      this.authListener = this.authListener.bind(this);
+    }
+  
+    componentDidMount() {
+      this.authListener();
+    }
+  
+    authListener() {
+      firebase.auth().onAuthStateChanged((user) => {
+        console.log(user);
+        if (user) {
+          this.setState({ user });
+          localStorage.setItem('user', user.uid);
+        } else {
+          this.setState({ user: null });
+          localStorage.removeItem('user');
+        }
+      });
+    }
+  
     render() {
         return (
             <Router>
